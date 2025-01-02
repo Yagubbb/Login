@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="chicago">#ff3f4140</color>
+    <color name="chicagoLight">#ff6d706f</color>
+    <color name="pearl">#ffc2c0b7</color>
 </resources>
