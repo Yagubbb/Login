@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Login" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Login" parent="Theme.Material3.Dark.NoActionBar" >
+        <item name="colorPrimary">@color/chicago</item>
+        <item name="colorPrimaryVariant">@color/chicagoLight</item>
+    </style>
 </resources>
+
