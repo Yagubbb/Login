@@ -24,6 +24,15 @@ class CreateAccount : AppCompatActivity() {
             finish() // Prevent backstack loop
         }
 
+        binding.registerPageNextButton.setOnClickListener{
+
+
+
+
+        }
+
     }
+
+
 }
 
