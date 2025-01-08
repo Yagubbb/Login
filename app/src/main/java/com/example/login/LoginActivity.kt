@@ -19,7 +19,6 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-
         initButtons()
 
 
