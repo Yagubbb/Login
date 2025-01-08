@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(intent)
 
                     } else {
-                        inputPassword.error = "Wrong email or password"
+                        inputPassword.error = "Wrong email or password!"
                     }
             }
 
