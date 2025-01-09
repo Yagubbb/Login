@@ -4,8 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.login.databinding.CreateAccountBinding
+import android.content.Context
+
 
 class CreateAccount : AppCompatActivity() {
+
+
 
     private lateinit var binding: CreateAccountBinding
 
@@ -15,24 +19,66 @@ class CreateAccount : AppCompatActivity() {
         binding = CreateAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initButtons()
+
+    }
+
+    private fun initButtons() = with(binding){
+
         // Navigate to Login Page
-        binding.textViewLogIn.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java).apply {
-                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-            }
+        textViewLogIn.setOnClickListener {
+
+            finish()
+            val intent = Intent(baseContext, LoginActivity::class.java)
             startActivity(intent)
-            finish() // Prevent backstack loop
+
         }
 
-        binding.registerPageNextButton.setOnClickListener{
+        registerPageNextButton.setOnClickListener{
+
+            val email = inputRegisteredEmail.text.toString().trim().lowercase()
+            val password = inputNewPass.text.toString()
+
+            val isEmailValid = isEmailValid(email)
+            val isPasswordValid = isPasswordValid(password)
+
+            if (isEmailValid) {
+                inputRegisteredEmail.error = null
+            } else
+                inputRegisteredEmail.error = "Invalid email format."
+
+            if (isPasswordValid) {
+                inputNewPass.error = null
+            } else
+                inputNewPass.error = "Password must be at least 3 characters long."
 
 
+
+            if (isEmailValid && isPasswordValid) {
+
+                val registration = CredentialsManager(baseContext).registerUser(email,password)
+
+                if (registration){
+                    println(CredentialsManager(baseContext).getAllUsers())
+                    finish()
+
+                    val intent = Intent(baseContext, LoginActivity::class.java)
+                    startActivity(intent)
+                }
+                else{
+                    inputRegisteredEmail.error = "Email is already taken"
+                }
+
+            }
 
 
         }
 
     }
 
+    private fun isEmailValid(email: String) = CredentialsManager(baseContext).isEmailValid(email)
+
+    private fun isPasswordValid(password: String) = CredentialsManager(baseContext).isPasswordValid(password)
 
 }
 
