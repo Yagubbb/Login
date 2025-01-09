@@ -1,10 +1,10 @@
-package com.example.login
+package com.example.login.Layouts
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.login.databinding.CreateAccountBinding
-import android.content.Context
+import com.example.login.CredentialsManager
 
 
 class CreateAccount : AppCompatActivity() {

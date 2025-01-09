@@ -13,17 +13,17 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Layouts.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Login" />
         <activity
-            android:name=".CreateAccount"
+            android:name=".Layouts.CreateAccount"
             android:exported="false"
             android:label="@string/title_activity_create_account"
             android:theme="@style/Theme.Login" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Layouts.LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Login">
