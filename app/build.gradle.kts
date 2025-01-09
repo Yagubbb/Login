@@ -45,11 +45,11 @@ android {
 
 dependencies {
     testImplementation(libs.mockitoCore)
-
+    val fragment_version = "1.8.5"
     // For AndroidX testing, if you want to mock Android-specific classes
     testImplementation(libs.androidxTestCore)
     testImplementation(libs.androidxTestJUnit)
-
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
     // Mockito inline for mocking final/spy classes
     testImplementation(libs.mockitoInline)
     implementation(libs.material3)

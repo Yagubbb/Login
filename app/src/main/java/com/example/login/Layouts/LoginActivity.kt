@@ -1,9 +1,9 @@
-package com.example.login
+package com.example.login.Layouts
 import android.content.Intent
 import android.os.Bundle
-import android.content.Context
 
 import androidx.appcompat.app.AppCompatActivity
+import com.example.login.CredentialsManager
 import com.example.login.databinding.LoginActivityBinding
 
 
