@@ -52,11 +52,13 @@ class LoginActivity : AppCompatActivity() {
 
             if (isEmailValid && isPasswordValid) {
 
-                    val isPasswordCorrect = CredentialsManager().login(User(email,password))
+
+                    val isPasswordCorrect = CredentialsManager(baseContext).loginUser(email,password)
 
                     if (isPasswordCorrect) {
                         finish()
                         val intent = Intent(baseContext, MainActivity::class.java)
+                        println( CredentialsManager(baseContext).getAllUsers())
                         startActivity(intent)
 
                     } else {
@@ -69,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun isEmailValid(email: String) = CredentialsManager().isEmailValid(email)
+    private fun isEmailValid(email: String) = CredentialsManager(baseContext).isEmailValid(email)
 
-    private fun isPasswordValid(password: String) = CredentialsManager().isPasswordValid(password)
+    private fun isPasswordValid(password: String) = CredentialsManager(baseContext).isPasswordValid(password)
 }

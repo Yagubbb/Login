@@ -44,6 +44,14 @@ android {
 }
 
 dependencies {
+    testImplementation(libs.mockitoCore)
+
+    // For AndroidX testing, if you want to mock Android-specific classes
+    testImplementation(libs.androidxTestCore)
+    testImplementation(libs.androidxTestJUnit)
+
+    // Mockito inline for mocking final/spy classes
+    testImplementation(libs.mockitoInline)
     implementation(libs.material3)
     implementation(libs.material)
     implementation(libs.androidx.material3.adaptive.navigation.suite)
